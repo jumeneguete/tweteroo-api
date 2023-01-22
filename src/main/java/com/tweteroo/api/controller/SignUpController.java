@@ -16,15 +16,15 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/sign-up")
 public class SignUpController {
-    
+
     @Autowired
     private UserService service;
 
     @PostMapping
-    public ResponseEntity<String> createUser( @RequestBody @Valid UserDTO body) {
+    public ResponseEntity<String> createUser(@RequestBody @Valid UserDTO body) {
         boolean existingUser = service.getUserByUsername(body.username());
 
-        if (existingUser){
+        if (existingUser) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("User already existis!");
         }
 

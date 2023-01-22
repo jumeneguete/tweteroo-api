@@ -14,8 +14,8 @@ public class UserService {
 
     @Autowired
     private UserRepository repository;
-    
-    public void createUser(UserDTO dto){
+
+    public void createUser(UserDTO dto) {
         repository.save(new UserModel(dto));
     }
 

@@ -6,8 +6,8 @@ import com.tweteroo.api.model.UserModel;
 
 import java.util.List;
 
-public interface UserRepository  extends JpaRepository<UserModel, Long> {
+public interface UserRepository extends JpaRepository<UserModel, Long> {
 
-    List<UserModel> findByUsername (String username);
-    
+    List<UserModel> findByUsername(String username);
+
 }

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserModel {
 
-    public UserModel(UserDTO req){
+    public UserModel(UserDTO req) {
         this.username = req.username();
         this.avatar = req.avatar();
     }
@@ -29,5 +29,5 @@ public class UserModel {
 
     @Column(length = 150, nullable = false)
     private String avatar;
-    
+
 }
