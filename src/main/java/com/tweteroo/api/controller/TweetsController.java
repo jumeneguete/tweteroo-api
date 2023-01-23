@@ -44,7 +44,7 @@ public class TweetsController {
     @GetMapping("/{username}")
     public ResponseEntity<Page<TweetModel>> getTweetsByUsername(@PathVariable String username,
             @RequestParam(value = "page", required = false, defaultValue = "0") int page,
-            @RequestParam(value = "size", required = false, defaultValue = "2") int size) {
+            @RequestParam(value = "size", required = false, defaultValue = "5") int size) {
         boolean existingUser = existingUser(username);
 
         if (!existingUser) {
@@ -57,7 +57,7 @@ public class TweetsController {
 
     @GetMapping
     public Page<TweetModel> getAllTweets(@RequestParam(value = "page", required = false, defaultValue = "0") int page,
-            @RequestParam(value = "size", required = false, defaultValue = "2") int size) {
+            @RequestParam(value = "size", required = false, defaultValue = "5") int size) {
 
         return service.getAllTweets(page, size);
     }
